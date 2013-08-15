@@ -80,18 +80,24 @@ class FormattingTest < Test::Unit::TestCase
   end
   
   def only_italic
-    default_formatting.merge italic: true
+    default_formatting.merge :italic => true
   end
   
   def only_bold
-    default_formatting.merge bold: true
+    default_formatting.merge :bold => true
   end
   
   def only_underline
-    default_formatting.merge underline: true
+    default_formatting.merge :underline => true
   end
   
   def all_formatting_options
-    default_formatting.merge italic: true, bold: true, underline: true
+    default_formatting.merge :italic => true, :bold => true, :underline => true
   end
+
+	if RUBY_VERSION =~ /^1.8./
+		def refute(expr)
+			assert !expr
+		end
+	end
 end
