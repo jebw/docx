@@ -8,9 +8,9 @@ module Docx
         include Elements::Element
 
         DEFAULT_FORMATTING = {
-          italic:    false,
-          bold:      false,
-          underline: false
+          :italic =>    false,
+          :bold =>      false,
+          :underline => false
         }
         
         TAG = 'r'
@@ -43,9 +43,9 @@ module Docx
 
         def parse_formatting
           {
-            italic:    !@node.xpath('.//w:i').empty?,
-            bold:      !@node.xpath('.//w:b').empty?,
-            underline: !@node.xpath('.//w:u').empty?
+            :italic =>    !@node.xpath('.//w:i').empty?,
+            :bold =>      !@node.xpath('.//w:b').empty?,
+            :underline => !@node.xpath('.//w:u').empty?
           }
         end
 
