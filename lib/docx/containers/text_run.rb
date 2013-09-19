@@ -4,6 +4,7 @@ module Docx
   module Elements
     module Containers
       class TextRun
+        TAG = 'r'
         include Container
         include Elements::Element
 
@@ -12,8 +13,6 @@ module Docx
           :bold =>      false,
           :underline => false
         }
-        
-        TAG = 'r'
 
         attr_reader :text
         attr_reader :formatting

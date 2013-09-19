@@ -5,10 +5,9 @@ module Docx
   module Elements
     module Containers
       class Paragraph
+        TAG = 'p'
         include Container
         include Elements::Element
-
-        TAG = 'p'
 
         # Child elements: pPr, r, fldSimple, hlink, subDoc
         # http://msdn.microsoft.com/en-us/library/office/ee364458(v=office.11).aspx

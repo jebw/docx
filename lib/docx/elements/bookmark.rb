@@ -3,11 +3,10 @@ require 'docx/elements/element'
 module Docx
   module Elements
     class Bookmark
+      TAG = 'bookmarkStart'
       include Element
       attr_accessor :name
       
-      TAG = 'bookmarkStart'
-
       def initialize(node)
         @node = node
         @name = @node['w:name']
